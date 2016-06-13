@@ -15,33 +15,39 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-#include <type_traits>
 #include <string>
 #include <iostream>
 
-template <typename T>
-struct Coord {
-    static_assert(std::is_arithmetic<T>::value, "template argument T must be arithmetic");
-    Coord(T x, T y) : x_(x), y_(y) {}
-    std::string to_string() const { return "[" + std::to_string(x_) + ", " + std::to_string(y_) + "]"; }
+std::string f(int& x) { return "l-value"; }
+std::string f(int&& x) { return "r-value"; }
 
-private:
-    T x_, y_;
-};
+int g() { return 1; }
 
-template <typename T>
-std::ostream& operator<<(std::ostream& out, const Coord<T>& coord)
-{
-    out << coord.to_string();
-    return out;
+void h(int& x) {
+    std::cout << f(x) << std::endl;                     // l-value
+}
+
+void i(int&& x) {
+    std::cout << f(x) << std::endl;                     // l-value
+    std::cout << f(std::forward<int>(x)) << std::endl;  // r-value
 }
 
 int main()
 {
-    Coord<double> c{ 0.1, 2.0 };
-    // Coord<std::string> d{ "a", "b" };
+    int x = 1;
 
-    std::cout << c << std::endl;
+    std::cout << f(x) << std::endl;                     // l-value
+    std::cout << f(g()) << std::endl;                   // r-value
+    std::cout << f(std::move(x)) << std::endl;          // r-value
+
+    h(x);
+    i(std::move(x));
 
     return 0;
+}
+
+template<typename T, typename... Args>
+std::unique_ptr<T> make_unique(Args&&... args)
+{
+    return std::unique_ptr<T>(new T(std::forward<Args>(args)...));
 }

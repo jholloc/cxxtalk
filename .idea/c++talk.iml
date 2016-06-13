@@ -2,21 +2,22 @@
 <module type="CPP_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/type_inference.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/enum_class.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/initialiser_lists.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/avoiding_copies.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/smart_pointers.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/constexpr.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/move_constructor.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/example1.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/static_assert.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/lambdas.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/user_defined_literals.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/range_based_for.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/functional.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/example_cxx14.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/example_cxx11.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/rvalue_references.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/moveable_resources.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/override_keyword.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/static_assert.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/functional2.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/reference_types.cpp" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">
